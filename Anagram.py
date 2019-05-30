@@ -1,18 +1,18 @@
 characters = input("Type in the words: ")
 characters = characters.replace(' ', '')
-
+'''
 with open("sample1.csv", "r") as f:
     dictionary = f.readlines()
 b = dictionary[0].lower().split(',')
 
 '''
-with open("dictionary.words", "r") as f:
+with open("dictionary.words.txt", "r") as f:
         dictionary = [w.lower().strip("\n") for w in f.readlines()]
-'''
+
 
 dictionary_words = []
 anagram_words = []
-for i in b:
+for i in dictionary:
     d = sorted(i)
     dictionary_words.append(d)
 
@@ -36,7 +36,7 @@ for word in dictionary_words:
                 
         if flag == True:
                 i = dictionary_words.index(word)
-                anagram_words.append(b[i])
+                anagram_words.append(dictionary[i])
 
 
 scored_anagram = []
